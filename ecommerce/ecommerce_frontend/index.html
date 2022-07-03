@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>store</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <ul>
+          <li><a href="./home.html">HOME</a></li>
+          <li><a href="">STORE</a></li>
+          <li><a href="./about.html">ABOUT</a></li>
+          <li><a href="./orders.html">ORDERS</a></li>
+        </ul>
+        <button class="cartbutton" id="cartbtn">cart</button>
+      </nav>
+
+      <!-- -------------nav ------end--- -->
+
+      <div class="storename">
+        <h1>The Generics</h1>
+      </div>
+
+      <!-- -------------------name-end-------- -->
+
+      <div class="product-container">
+        <div class="card-Container" id="card-Container">
+          <!-- <div class="card">
+            <p class="title">scooter</p>
+            <img
+              class="productImg"
+              src="https://images.carandbike.com/bike-images/large/honda/activa-6g/honda-activa-6g.jpg?v=18"
+              alt="image here"
+            />
+            <div class="price-addtoCart">
+              <h3 class="price">$9.99</h3>
+              <button class="add-to-cart-btn">ADD TO CART</button>
+            </div>
+          </div> -->
+          
+        </div>
+      </div>
+      <div class="showCart">
+        <button>SHOW CART</button>
+      </div>
+
+      <!-- -----------------------------------------------Cart item  section------------ -->
+
+      <section class="Cart-Section content-section" id="Cart-Section">
+        <h2 class="section-header">CART</h2>
+        <div class="cart-row">
+          <span class="cart-item cart-header cart-column">ITEM</span>
+          <span class="cart-price cart-header cart-column">PRICE</span>
+          <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+        </div>
+        <div class="cart-items">
+          
+        </div>
+        <div class="cart-total">
+          <strong class="cart-total-title">Total</strong>
+          <span class="cart-total-price">$39.97</span>
+        </div>
+        <button class="btn-purchase" id="btn-purchase" type="button">
+          PURCHASE
+        </button>
+      </section>
+
+      <!-- --------------------------------------------------------toast notification---- -->
+
+      <div class="toast-container" id="toast-container">
+       
+
+      </div>
+     
+      <div class="pagination" id="pagination">
+          
+
+         
+      </div>
+
+      <!-- ------------------------footer start here------------------------- -->
+
+      <footer>
+        <p>the Generics</p>
+
+        <div class="socialmediaLinks">
+          <ul>
+            <li>
+              <a href="#">
+                <img
+                  src="data:image/png;base64,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"
+              /></a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/1200px-2021_Facebook_icon.svg.png"
+              /></a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </body>
+</html>
